@@ -20,8 +20,6 @@ include/mapped_ptr_vector.h -text
 include/mapped_vector.h -text
 include/rcsb_math.h -text
 include/rcsb_types.h -text
-lib/.cvsignore -text
-obj/.cvsignore -text
 src/BlockIO.C -text
 src/CifString.C -text
 src/DataInfo.C -text
