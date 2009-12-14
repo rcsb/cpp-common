@@ -284,6 +284,31 @@ bool DataInfo::IsItemMandatory(const string& catName,
 }
 
 
+void DataInfo::GetMandatoryItems(vector<string>& mandItemsNames,
+  const string& catName)
+{
+    mandItemsNames.clear();
+
+    const vector<string>& itemsNames = GetItemsNames();
+    for (unsigned int itemI = 0; itemI < itemsNames.size(); ++itemI)
+    {
+        const string& itemName = itemsNames[itemI];
+
+        string currCatName;
+        CifString::GetCategoryFromCifItem(currCatName, itemName);
+        if (currCatName != catName)
+        {
+            continue;
+        }
+
+        if (IsItemMandatory(itemName))
+        {
+            mandItemsNames.push_back(itemName);
+        }
+    }
+}
+
+
 bool DataInfo::IsItemMandatory(const string& itemName)
 {
     const vector<string>& mCode = GetItemAttribute(itemName,

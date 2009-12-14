@@ -77,6 +77,9 @@ class DataInfo
       const std::string& catName,
       const std::string& attribName);
 
+    void GetMandatoryItems(std::vector<std::string>& mandItemsNames,
+      const std::string& catName);
+
     bool IsItemMandatory(const std::string& catName,
       const std::string& attribName);
     virtual bool IsItemMandatory(const std::string& itemName);
