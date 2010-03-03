@@ -143,6 +143,7 @@ public:
     static bool IsUnknownValue(const std::string& value);
 
     static bool IsSpecialChar(const char charValue);
+    static bool IsSpecialFirstChar(const char charValue);
 };
 
 #endif

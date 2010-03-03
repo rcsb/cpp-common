@@ -264,3 +264,30 @@ bool CifString::IsSpecialChar(const char charValue)
     }
 }
 
+
+bool CifString::IsSpecialFirstChar(const char charValue)
+{
+    switch (charValue)
+    {
+        case '$':
+        case '#':
+        case '_':
+        case ';':
+        case '(':
+        case ')':
+        case '[':
+        case ']':
+        case '{':
+        case '}':
+        {
+            return (true);
+            break;
+        }
+        default:
+        {
+            return (false);
+            break;
+        }
+    }
+}
+
