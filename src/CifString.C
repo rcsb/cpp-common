@@ -192,7 +192,7 @@ void CifString::GetCategoryFromCifItem(string& categoryName,
     if (cifItem.empty() || (cifItem[0] != '_'))
     {
         throw EmptyValueException("Invalid CIF item \"" + cifItem + "\"",
-          "CifString::GetItemFromCifItem");
+          "CifString::GetCategoryFromCifItem");
     }
 
     // Skip the first char and search for a join character
@@ -201,7 +201,7 @@ void CifString::GetCategoryFromCifItem(string& categoryName,
     if (dotIndex == string::npos)
     {
         throw EmptyValueException("Invalid CIF item \"" + cifItem + "\"",
-          "CifString::GetItemFromCifItem");
+          "CifString::GetCategoryFromCifItem");
 #ifdef VLAD_DEL
         // If join char not found, set its index to be the end of the string.
         dotIndex = cifItem.size();
