@@ -20,6 +20,7 @@ using std::out_of_range;
 using std::string;
 using std::vector;
 using std::pair;
+using std::make_pair;
 
 
 template <typename T, typename StringCompareT>

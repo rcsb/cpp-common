@@ -16,9 +16,14 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#include <string>
+
 #include "rcsb_types.h"
 #include "Exceptions.h"
+#include "GenString.h"
 #include "BlockIO.h"
+
+using std::string;
 
 BlockIO::BlockIO()
 {
@@ -34,8 +39,8 @@ unsigned int BlockIO::ReadBlock(const int fd, const UInt32 blockNum)
 {
     if (lseek(fd, BLKSIZE * blockNum, SEEK_SET) == -1)
     {
-        throw FileException("Could not seek in the file with fd: " + fd,
-          "BlockIO::ReadBlock");
+        throw FileException(string("Could not seek in the file with fd: ") + \
+          String::IntToString(fd), "BlockIO::ReadBlock");
     }
 
     // VLAD - CHECK FOR -1 AND THROW EXCEPTION
@@ -46,8 +51,8 @@ unsigned int BlockIO::WriteBlock(const int fd, const UInt32 blockNum)
 {
     if (lseek(fd, blockNum * BLKSIZE, SEEK_SET) == -1)
     {
-        throw FileException("Could not seek in the file with fd: " + fd,
-          "BlockIO::WriteBlock");
+        throw FileException(string("Could not seek in the file with fd: ") + \
+          String::IntToString(fd), "BlockIO::WriteBlock");
     }
 
     // VLAD - CHECK FOR -1 AND THROW EXCEPTION

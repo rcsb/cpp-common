@@ -12,9 +12,11 @@
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
+#include <string>
 
 #include "rcsb_types.h"
 #include "Exceptions.h"
+#include "GenString.h"
 #include "RcsbPlatform.h"
 #include "Serializer.h"
 
@@ -44,8 +46,8 @@ Serializer::Serializer(const string& fileName,
     if ((fileMode != READ_MODE) && (fileMode != CREATE_MODE) &&
       (fileMode != UPDATE_MODE))
     {
-        throw FileModeException("Invalid file mode: " + fileMode,
-          "BlockIO::BlockIO");
+        throw FileModeException(string("Invalid file mode: ") + \
+          String::IntToString(fileMode), "BlockIO::BlockIO");
     }
 
     _numBlocksIO = 0;
