@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <iterator>
 #include <string>
+#include <iomanip>
 #include <sstream>
 
 #include "Exceptions.h"
@@ -75,6 +76,49 @@ bool Char::IsWhiteSpace(const char c)
 bool Char::IsDigit(const char c)
 {
     return ((c >= '0') && (c <= '9'));
+}
+
+
+bool Char::IsPrintable(const char c)
+{
+    unsigned int asciiCode = c;
+
+    return ((asciiCode >= 48 && asciiCode <= 57) || \
+      (asciiCode >= 97 && asciiCode <= 122) || \
+      (asciiCode >= 65 && asciiCode <= 90) || \
+      (asciiCode >= 33 && asciiCode <= 47) || \
+      (asciiCode >= 58 && asciiCode <= 64) || \
+      (asciiCode >= 91 && asciiCode <= 96) || \
+      (asciiCode >= 123 && asciiCode <= 126) || \
+      (asciiCode == 32) || \
+      (asciiCode >= 9 && asciiCode <= 13));
+}
+
+
+bool Char::IsCarriageReturn(const char c)
+{
+    unsigned int asciiCode = c;
+
+    return asciiCode == 13;
+}
+
+
+void Char::AsciiCodeInHex(const char c, string& asciiHexString)
+{
+    asciiHexString.clear();
+
+    string maxAsciiStr = "FF";
+
+    std::istringstream buffer(maxAsciiStr);
+    unsigned int mask;
+    buffer >> std::hex >> mask;
+
+    unsigned int asciiCode = c & mask;
+
+    std::stringstream strStream;
+    strStream << std::setw(maxAsciiStr.size()) << std::hex << asciiCode;
+
+    asciiHexString = strStream.str();
 }
 
 

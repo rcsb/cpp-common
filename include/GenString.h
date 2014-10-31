@@ -38,6 +38,10 @@ class Char
 
     static bool IsWhiteSpace(const char c);
     static bool IsDigit(const char c);
+    static bool IsCarriageReturn(const char c);
+    static bool IsPrintable(const char c);
+
+    static void AsciiCodeInHex(const char c, std::string& asciiHexString);
 };
 
 
