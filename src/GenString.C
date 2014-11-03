@@ -26,6 +26,7 @@ using std::lexicographical_compare;
 using std::find_if;
 using std::remove_copy_if;
 using std::replace_if;
+using std::remove_if;
 using std::unique;
 using std::transform;
 using std::back_inserter;
@@ -34,6 +35,9 @@ using std::string;
 using std::ios;
 using std::istringstream;
 using std::ostringstream;
+using std::hex;
+using std::setw;
+using std::setfill;
 
 
 char Char::ToLower(const char c)
@@ -109,14 +113,14 @@ void Char::AsciiCodeInHex(const char c, string& asciiHexString)
 
     string maxAsciiStr = "FF";
 
-    std::istringstream buffer(maxAsciiStr);
+    istringstream buffer(maxAsciiStr);
     unsigned int mask;
-    buffer >> std::hex >> mask;
+    buffer >> hex >> mask;
 
     unsigned int asciiCode = c & mask;
 
-    std::stringstream strStream;
-    strStream << std::setw(maxAsciiStr.size()) << std::hex << asciiCode;
+    ostringstream strStream;
+    strStream << hex << setw(maxAsciiStr.size()) << setfill('0') << asciiCode;
 
     asciiHexString = strStream.str();
 }
@@ -317,7 +321,7 @@ void String::RemoveWhiteSpace(const string& inString, string& outString)
 {
     outString = inString;
 
-    outString.erase(std::remove_if(outString.begin(), outString.end(),
+    outString.erase(remove_if(outString.begin(), outString.end(),
       Char::IsWhiteSpace), outString.end());
 }
 
