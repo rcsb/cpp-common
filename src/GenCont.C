@@ -4,6 +4,7 @@
 //$$LICENSE$$
 
 
+#include <iostream>
 #include <string>
 #include <vector> 
 #include <algorithm>
@@ -16,6 +17,24 @@ using std::string;
 using std::vector;
 using std::find_if;
 using std::bind2nd;
+
+using std::ostream;
+
+
+ostream& operator<<(ostream& out, const vector<string>& contVector)
+{
+    out << "[ ";
+
+    for (vector<string>::const_iterator it = contVector.begin();
+      it != contVector.end(); ++it)
+    {
+        out << "\"" << (*it) << "\" ";
+    }
+
+    out << "]";
+
+    return (out);
+}
 
 
 GenCont::GenCont()

@@ -14,6 +14,10 @@
 #include "GenString.h"
 
 
+std::ostream& operator<<(std::ostream& out,
+  const std::vector<std::string>& contVector);
+
+
 class GenCont
 {
   public:
