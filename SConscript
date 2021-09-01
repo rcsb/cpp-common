@@ -10,7 +10,7 @@ env=env.Clone()
 if (len(env.subst('$MYDEBUG')) > 0):
 	dict = env.Dictionary()
 	for k,v in dict.items():
-		print  k, " = ", str(v)
+    	        print("%s = %s" % (k, str(v)))
 #
 libName = 'common'
 libSrcList =['src/RcsbPlatform.C',
