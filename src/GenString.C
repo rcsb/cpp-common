@@ -369,7 +369,7 @@ int String::StringToInt(const string& inString)
 
         return (ret);
     }
-    catch (exception& e)
+    catch (exception& exc)
     {
         throw runtime_error("Could not convert \"" + inString +
           "\" to a number in String::StringToInt");
@@ -584,7 +584,7 @@ bool String::IsNumber(const string& inString)
 
         return (true);
     }
-    catch (exception)
+    catch (exception& exc)
     {
         return (false);
     }
