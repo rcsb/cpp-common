@@ -26,6 +26,7 @@ const string CifString::CIF_DDL_CATEGORY_CATEGORY("category");
 const string CifString::CIF_DDL_CATEGORY_CATEGORY_EXAMPLES("category_examples");
 const string CifString::CIF_DDL_CATEGORY_NDB_CATEGORY_EXAMPLES("ndb_category_examples");
 const string CifString::CIF_DDL_CATEGORY_CATEGORY_KEY("category_key");
+const string CifString::CIF_DDL_CATEGORY_CATEGORY_SECONDARY_KEY("category_secondary_key");
 const string CifString::CIF_DDL_CATEGORY_CATEGORY_GROUP("category_group");
 const string CifString::CIF_DDL_CATEGORY_CATEGORY_GROUP_LIST("category_group_list");
 const string CifString::CIF_DDL_CATEGORY_CATEGORY_METHODS("category_methods");

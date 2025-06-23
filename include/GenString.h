@@ -77,7 +77,7 @@ class CharLess
  ** This class is equal_to functor for generic character. It supports the
  ** following compare types: case-sensitive and case-insensitive.
  */
-class CharEqualTo : public std::binary_function<char, char, bool>
+class CharEqualTo : public std::__binary_function<char, char, bool>
 {
   public:
     CharEqualTo(Char::eCompareType compareType = Char::eCASE_SENSITIVE);
@@ -93,7 +93,7 @@ class CharEqualTo : public std::binary_function<char, char, bool>
 };
 
 
-class WhiteSpace : public std::unary_function<char, bool>
+class WhiteSpace : public std::__unary_function<char, bool>
 {
   public:
     bool operator()(const char c) const;
@@ -133,7 +133,7 @@ class StringLess
  ** This class is equal_to functor for generic strings. It supports the
  ** following compare types: case-sensitive, case-insensitive and as-integer.
  */
-class StringEqualTo : public std::binary_function<std::string, std::string,
+class StringEqualTo : public std::__binary_function<std::string, std::string,
   bool>
 {
   public:

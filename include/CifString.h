@@ -47,6 +47,7 @@ public:
     static const std::string CIF_DDL_CATEGORY_CATEGORY_EXAMPLES;
     static const std::string CIF_DDL_CATEGORY_NDB_CATEGORY_EXAMPLES;
     static const std::string CIF_DDL_CATEGORY_CATEGORY_KEY;
+    static const std::string CIF_DDL_CATEGORY_CATEGORY_SECONDARY_KEY;
     static const std::string CIF_DDL_CATEGORY_CATEGORY_GROUP;
     static const std::string CIF_DDL_CATEGORY_CATEGORY_GROUP_LIST;
     static const std::string CIF_DDL_CATEGORY_CATEGORY_METHODS;
