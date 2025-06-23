@@ -12,7 +12,7 @@
 #include <vector>
 
 
-/**
+/** 
  ** \class CifString
  ** 
  ** \brief Public class that contains CIF string related static methods.

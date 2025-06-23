@@ -12,7 +12,7 @@
 #include <functional>
 
 
-/**
+/** 
  ** \class Char
  **
  ** \brief Generic character class that contains character related methods.

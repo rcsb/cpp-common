@@ -149,7 +149,7 @@ void CifString::GetItemFromCifItem(string& itemName, const string& cifItem)
      Get the itemName part of an item name (ie. _<category>.<itemName>)
      Return 1 for success or 0 otherwise.
 
-     *--------------------------------------------------------------------- */
+     *--------------------------------------------------------------------- */ 
 
     unsigned int k, ilen;
 
