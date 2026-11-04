@@ -13,6 +13,10 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#ifndef O_BINARY
+#define O_BINARY 0
+#endif
+
 #ifdef _WIN32
 #ifndef S_IRUSR
 #define S_IRUSR _S_IREAD
@@ -1459,7 +1463,7 @@ void Serializer::OpenFileIO(const string& fileName, const eFileMode fileMode)
             break;
     }
 
-    if ((_fd = open(fileName.c_str(), openMode, S_IRUSR|S_IWUSR)) < 0)
+    if ((_fd = open(fileName.c_str(), openMode | O_BINARY, S_IRUSR|S_IWUSR)) < 0)
     {
         throw FileException("Could not open file: " + fileName,
           "BlockIO::OpenFile");
